@@ -1,6 +1,5 @@
 # e-folio B: Respostas de apoio
 
-Estas respostas estao escritas em texto ASCII e organizadas por pergunta. Adapte a formatacao conforme o modelo pedido pela avaliacao.
 
 ## 1) Plataforma de reservas
 
