@@ -6,15 +6,18 @@ Este exercício pede a implementação de uma aplicação para gerir tratamentos
 
 ## Estrutura da Solução
 
-A solução foi implementada em Python no arquivo `aqualin_treatment.py`.
+A solução foi implementada em C no arquivo `aqualin_treatment.c`.
 
-### Classes Principais
+### Estruturas Principais
 
 1. **Camara**: Representa uma câmara térmica
-   - Atributos: nome, lista de tratamentos realizados
+   - Atributos: nome, array de tratamentos realizados, número de tratamentos
 
 2. **Aqualin**: Representa um paciente Aqualin
-   - Atributos: nome, saúde de entrada, saúde atual, instante de entrada, tempo de espera, instante de saída, estado (alta/morte), câmara atribuída
+   - Atributos: nome, saúde de entrada, saúde atual, instante de entrada, tempo de espera, instante de saída, estado (alta/morte), índice da câmara atribuída
+
+3. **Tratamento**: Representa um tratamento realizado numa câmara
+   - Atributos: nome do paciente, saúde de entrada, instante de entrada, instante de saída
 
 ### Funções Principais
 
@@ -62,8 +65,19 @@ A solução foi implementada em Python no arquivo `aqualin_treatment.py`.
 
 ## Como Usar
 
+### Compilação
 ```bash
-python3 aqualin_treatment.py < input.txt
+make
+```
+
+Ou manualmente:
+```bash
+gcc -Wall -Wextra -std=c99 -O2 -o aqualin_treatment aqualin_treatment.c
+```
+
+### Execução
+```bash
+./aqualin_treatment < input.txt
 ```
 
 O arquivo de entrada deve conter comandos, um por linha, começando com `#`. A aplicação termina quando encontra uma linha sem `#` ou com `#` sem palavras após.

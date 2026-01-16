@@ -9,17 +9,22 @@ O exercício pede a implementação de uma aplicação para gerir tratamentos de
 ## 🚀 Como Executar
 
 ### Requisitos
-- Python 3.6 ou superior
+- GCC (compilador C)
+- Make (opcional, mas recomendado)
+
+### Compilação
+```bash
+make
+```
+
+Ou manualmente:
+```bash
+gcc -Wall -Wextra -std=c99 -O2 -o aqualin_treatment aqualin_treatment.c
+```
 
 ### Execução
 ```bash
-python3 aqualin_treatment.py < arquivo_entrada.txt
-```
-
-ou, se o script estiver com permissões de execução:
-
-```bash
-./aqualin_treatment.py < arquivo_entrada.txt
+./aqualin_treatment < arquivo_entrada.txt
 ```
 
 ## 📝 Formato dos Comandos
@@ -131,9 +136,14 @@ O repositório inclui vários arquivos de teste:
 
 Execute todos os testes:
 ```bash
+make test
+```
+
+Ou manualmente:
+```bash
 for test in test_input*.txt; do
     echo "=== Running $test ==="
-    python3 aqualin_treatment.py < "$test"
+    ./aqualin_treatment < "$test"
     echo ""
 done
 ```
@@ -141,14 +151,16 @@ done
 ## 📚 Estrutura do Código
 
 ```
-aqualin_treatment.py
-├── Classes
+aqualin_treatment.c
+├── Estruturas
 │   ├── Camara - Representa uma câmara térmica
-│   └── Aqualin - Representa um paciente
+│   ├── Aqualin - Representa um paciente
+│   └── Tratamento - Representa um tratamento realizado
 ├── Funções
 │   ├── validar_nome() - Valida formato do nome
 │   ├── calcular_tempo_tratamento() - Calcula tempo de recuperação
 │   ├── calcular_degradacao() - Calcula degradação durante espera
+│   ├── executar_tratamentos() - Calendariza e executa tratamentos
 │   └── main() - Loop principal de processamento
 ```
 

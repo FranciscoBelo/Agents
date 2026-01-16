@@ -8,7 +8,7 @@
 - ✅ Identificadas as 4 partes principais do problema
 
 ### 2. Implementação da Solução
-Arquivo: `aqualin_treatment.py` (11,739 bytes)
+Arquivo: `aqualin_treatment.c` (~550 linhas)
 
 #### Parte 1 - Gestão de Câmaras Térmicas
 - ✅ Comando para adicionar câmaras: `# <nome>`
@@ -90,9 +90,9 @@ Criados 3 documentos completos:
 
 | Métrica | Valor |
 |---------|-------|
-| Linhas de código | ~320 |
-| Funções implementadas | 4 |
-| Classes definidas | 2 |
+| Linhas de código | ~550 |
+| Funções implementadas | 15+ |
+| Estruturas definidas | 3 |
 | Comandos suportados | 9 |
 | Testes criados | 5 |
 | Casos de teste cobertos | ~30 |
@@ -115,7 +115,7 @@ Criados 3 documentos completos:
 ```
 
 ### Cálculo de Tempo de Tratamento
-```python
+```c
 Saúde > 50:  1 tic/ponto     → (100-saude) tics
 Saúde > 20:  10 tics/ponto   → transição em faixas
 Saúde > 10:  100 tics/ponto  → transição em faixas
@@ -123,7 +123,7 @@ Saúde > 0:   1000 tics/ponto → transição em faixas
 ```
 
 ### Cálculo de Degradação
-```python
+```c
 Saúde > 50:  -1 por 1000 tics
 Saúde > 20:  -1 por 100 tics
 Saúde > 10:  -1 por 10 tics
@@ -175,5 +175,5 @@ O código está pronto para submissão e uso, com documentação completa e test
 
 **Data de Conclusão**: 16 de Janeiro de 2026  
 **Implementado por**: GitHub Copilot Agent  
-**Linguagem**: Python 3  
+**Linguagem**: C (ISO C99)  
 **Status**: ✅ Completo e Testado
