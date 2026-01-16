@@ -1,0 +1,25 @@
+# Test 3: Edge cases and validation
+# Invalid names (should be ignored)
+# InvalidName
+# Single
+# Too-Many-Parts-Here
+# Valid-Name
+# relatorio global
+# Valid names but duplicate
+# Valid-Name
+# relatorio global
+# Invalid health values (should be ignored)
+# Patient-One 0 0
+# Patient-Two 100 0
+# Patient-Three -5 0
+# Patient-Four 105 0
+# Valid patient
+# Patient-Five 50 0
+# relatorio global
+# Invalid instante (decreasing)
+# Patient-Six 40 5
+# Patient-Seven 30 3
+# Patient-Eight 45 10
+# relatorio global
+# tratamentos
+fim

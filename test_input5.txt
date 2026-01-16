@@ -1,0 +1,21 @@
+# Chamber-Alpha
+# Chamber-Beta
+# Chamber-Gamma
+# relatorio global
+# Patient-One 75 100
+# Patient-Two 45 200
+# Patient-Three 25 300
+# Patient-Four 15 400
+# Patient-Five 8 500
+# tratamentos
+# relatorio aqualins
+# relatorio camaras
+# indicador espera
+# indicador trabalho
+# indicador salvos
+# Patient-Six 60 1000
+# Patient-Seven 30 1100
+# tratamentos
+# relatorio aqualins
+# indicador salvos
+fim

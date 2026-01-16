@@ -1,0 +1,18 @@
+# Test 4: Complex waiting scenarios
+# Only one chamber - patients must wait
+# Single-Chamber
+# First patient - healthy enough to survive
+# Patient-Alpha 55 0
+# Second patient - will wait and degrade
+# Patient-Beta 52 0
+# Third patient - critical, might die
+# Patient-Gamma 11 0
+# Fourth patient - very critical
+# Patient-Delta 2 0
+# tratamentos
+# relatorio aqualins
+# relatorio camaras
+# indicador espera
+# indicador trabalho
+# indicador salvos
+fim
