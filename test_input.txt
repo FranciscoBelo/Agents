@@ -1,0 +1,15 @@
+# Camara-Um
+# Camara-Dois
+# Camara-Tres
+# relatorio global
+# Paciente-Alpha 55 100
+# Paciente-Beta 25 200
+# Paciente-Gamma 15 300
+# Paciente-Delta 5 400
+# tratamentos
+# relatorio aqualins
+# relatorio camaras
+# indicador espera
+# indicador trabalho
+# indicador salvos
+fim
