@@ -6,6 +6,7 @@ E-fólio B 2525/2526 - Introdução à Programação
 
 import sys
 from typing import List, Tuple, Optional
+from collections import deque
 
 
 class Camara:
@@ -37,7 +38,7 @@ class Aqualin:
 def validar_nome(nome: str) -> bool:
     """Valida se o nome tem dois nomes unidos por traço"""
     partes = nome.split('-')
-    return len(partes) == 2 and all(parte.strip() for parte in partes)
+    return len(partes) == 2 and all(len(parte.strip()) > 0 for parte in partes)
 
 
 def calcular_tempo_tratamento(saude: int) -> int:
@@ -130,7 +131,6 @@ def main():
     camaras = []
     aqualins = []
     ultimo_instante = 0
-    tratamentos_executados = False
     
     for linha in sys.stdin:
         linha = linha.strip()
@@ -204,23 +204,24 @@ def main():
             for camara in camaras:
                 camara.tratamentos = []
             
-            # Copiar lista de aqualins para processamento
-            fila_espera = aqualins.copy()
+            # Copiar lista de aqualins para processamento usando deque
+            fila_espera = deque(aqualins)
             
-            # Estado das câmaras: (camara, instante_disponivel)
-            estado_camaras = [(camara, 0) for camara in camaras]
+            # Estado das câmaras: (camara, instante_disponivel, indice_original)
+            # Pre-computar índices para evitar chamadas repetidas a index()
+            estado_camaras = [(camara, 0, idx) for idx, camara in enumerate(camaras)]
             
             # Lista de eventos (instante, aqualin, tipo)
             altas = []
             mortes = []
             
             while fila_espera:
-                # Próximo paciente
-                aqualin = fila_espera.pop(0)
+                # Próximo paciente (O(1) com deque)
+                aqualin = fila_espera.popleft()
                 
-                # Encontrar câmara disponível mais cedo
-                estado_camaras.sort(key=lambda x: (x[1], camaras.index(x[0])))
-                camara, instante_disponivel = estado_camaras[0]
+                # Encontrar câmara disponível mais cedo (ordenar por instante, depois por índice)
+                estado_camaras.sort(key=lambda x: (x[1], x[2]))
+                camara, instante_disponivel, idx = estado_camaras[0]
                 
                 # Calcular tempo de espera
                 tempo_espera = max(0, instante_disponivel - aqualin.instante_entrada)
@@ -251,10 +252,8 @@ def main():
                     camara.tratamentos.append((aqualin.nome, aqualin.saude_entrada, 
                                               instante_inicio_tratamento, instante_alta))
                     
-                    # Atualizar estado da câmara
-                    estado_camaras[0] = (camara, instante_alta)
-            
-            tratamentos_executados = True
+                    # Atualizar estado da câmara (mantendo o índice)
+                    estado_camaras[0] = (camara, instante_alta, idx)
             
             # Imprimir relatório de altas
             print("Altas:")
