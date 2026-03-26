@@ -1,0 +1,14 @@
+# Camara-A
+# Camara-B
+# relatorio global
+# Paciente-Um 60 0
+# Paciente-Dois 30 0
+# Paciente-Tres 12 0
+# Paciente-Quatro 3 0
+# tratamentos
+# relatorio aqualins
+# relatorio camaras
+# indicador espera
+# indicador trabalho
+# indicador salvos
+fim

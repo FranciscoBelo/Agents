@@ -1,0 +1,23 @@
+# Compiled binary
+aqualin_treatment
+
+# Object files
+*.o
+*.obj
+
+# Python cache (for old version)
+__pycache__/
+*.pyc
+*.pyo
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Build artifacts
+*.exe
+*.out
+a.out
